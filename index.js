@@ -46,6 +46,13 @@ app.get("/bookingData/:id",async (req,res)=>{
   res.send(singleCollection)
 })
 
+app.post("/bookingDataCollection",async(req,res)=>{
+  const bookData=req.body;
+  const result=await bookingCollection.insertOne(bookData)
+  res.send(result)
+})
+
+
 }
 finally{
 
